@@ -1,0 +1,28 @@
+﻿<Page x:Class="barbershop.View.Page1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:barbershop.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="700"
+      Title="Page1">
+
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFA76B25"/>
+                <GradientStop Color="#FFFDCA7E" Offset="1"/>
+                <GradientStop Color="#FFC87A42" Offset="0.509"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="425"/>
+        </Grid.RowDefinitions>
+
+        <Frame x:Name="MyFrame" Grid.Row="1" Background="Transparent"/>
+
+    </Grid>
+</Page>

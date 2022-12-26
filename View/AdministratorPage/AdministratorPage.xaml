@@ -1,0 +1,89 @@
+﻿<Page x:Class="barbershop.View.AdministratorPage.AdministratorPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:barbershop.View.AdministratorPage"
+      mc:Ignorable="d" 
+      d:DesignHeight="500" d:DesignWidth="720"
+      Title="AdministratorPage"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
+
+    <Grid>
+        <Border VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                Height="500"
+                Width="720">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFA76B25"/>
+                    <GradientStop Color="#FFFDCA7E" Offset="1"/>
+                    <GradientStop Color="#FFC87A42" Offset="0.509"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Grid>
+                
+          
+
+            
+                <TextBlock Text="Админ"
+                               FontSize="25"
+                               TextWrapping="Wrap"
+                               Width="400"
+                               Margin="8,40,0,0"
+                               FontWeight="SemiBold"
+                               Foreground="Black"
+                               TextAlignment="Center"/>
+
+
+                <StackPanel HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Margin="5">
+                    
+                    <DataGrid x:Name="DataUserInfo"
+                              FontSize="15"
+                              Height="500"
+                              Width="720"
+                              AutoGenerateColumns="False"
+                              IsReadOnly="True"
+                              CanUserSortColumns="False"
+                              Background="#FFFDCA7E"
+                              RowBackground="White"
+                              AlternatingRowBackground="#F0FFF0"
+                              GridLinesVisibility="Horizontal"
+                              ColumnHeaderHeight="50"
+                              CanUserAddRows="False"
+                              CanUserDeleteRows="False"
+                              CanUserResizeRows="False"
+                              Effect="{StaticResource MaterialDesignElevationShadow16}">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Width="Auto" Header="Логин" Binding="{Binding Login}" FontSize="15"/>
+                            <DataGridTextColumn Width="Auto" Header="Пароль" Binding="{Binding Password}" FontSize="15"/>
+                            <DataGridTemplateColumn>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button Background="#FFA76B25"
+                                                Foreground="Black"
+                                                x:Name="BtnDelete"
+                                                Click="BtnDelete_Click"
+                                                ToolTip="Удалить пользователя"
+                                                BorderBrush="#FFC87A42"
+                                                Style="{StaticResource MaterialDesignFlatLightButton}">
+                                            <StackPanel Orientation="Horizontal">
+                                                <materialDesign:PackIcon Kind="Remove"/>
+                                            </StackPanel>
+                                        </Button>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                        
+                    </DataGrid>
+
+
+                </StackPanel>
+
+            </Grid>
+        </Border>
+    </Grid>
+</Page>
